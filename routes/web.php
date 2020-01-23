@@ -11,6 +11,15 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [
+	'uses' => 'TodosController@index',
+]);
+
+Route::get('todos', [
+	'uses' => 'TodosController@index',
+]);
+
+Route::get('todos/{todo}', [
+	'uses' => 'TodosController@show',
+	'as'	=>'single-todos'
+]);
