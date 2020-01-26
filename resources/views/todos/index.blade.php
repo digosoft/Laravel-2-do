@@ -1,11 +1,5 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Todos Data View</title>
-	<link rel="stylesheet" type="text/css" href="{{asset('public/css/bootstrap.css')}}">
-</head>
-<body>
-	<div class="container">		
+	@extends('layout.app')
+	@section('content')
 			<h1 class="text-center my-5">TODOS</h1>
 		  
 			<div class="row">
@@ -18,7 +12,7 @@
 					      		<ul class="list-group">
 									@foreach($todos as $todo)
 										<li class="list-group-item">{{$todo->name }}
-											<a href="{{route('single-todos',$todo->id)}}" class="btn btn-primary btn-sm float-right"> view</a>
+											<a href="{{ route('single-todos', $todo->id)}}" class="btn btn-primary btn-sm float-right"> view</a>
 										</li> 
 									@endforeach
 								</ul>
@@ -27,6 +21,4 @@
 
 		      		</div>
 			</div>
-      </div>
-</body>
-</html>
+	@endsection

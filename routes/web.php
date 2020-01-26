@@ -13,13 +13,35 @@
 
 Route::get('/', [
 	'uses' => 'TodosController@index',
+	'as'=> 'home',
 ]);
 
 Route::get('todos', [
 	'uses' => 'TodosController@index',
+	'as'	=> 'todos'
 ]);
 
 Route::get('todos/{todo}', [
 	'uses' => 'TodosController@show',
 	'as'	=>'single-todos'
+]);
+
+Route::get('create-todo', [
+	'uses' => 'TodosController@create',
+	'as'	=>'new-todo'
+]);
+
+Route::post('store-todo', [
+	'uses' => 'TodosController@store',
+	'as'	=>'store-todos'
+]);
+
+Route::post('todos/{tid}/update', [
+	'uses' => 'TodosController@update',
+	'as'	=>'update-todos'
+]);
+
+Route::get('{edit}/edit', [
+	'uses'	=> 'TodosController@edit',
+	'as'	=>	'edit-todos'
 ]);
