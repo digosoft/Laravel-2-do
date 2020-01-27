@@ -6,8 +6,8 @@
 </head>
 <body>
 
-			<ul class="nav navbar-inverse">
-				<a class="navbar-brand" href="#">Todos App </a>
+			<ul class="nav navbar-default">
+				<a class="navbar-brand" href="#"> </a>
 			  <li class="nav-item"> 
 			    <a class="nav-link active" href="{{route('home')}}">HOME</a>
 			  </li>
@@ -27,6 +27,14 @@
 
 
 	<div class="container">	
+
+			@if(session()->has('success'))
+				<div class="alert alert-success">
+					{{session()->get('success')}}
+				</div>
+			@endif
+
+			
 		@yield('content')
       </div>
 </body>

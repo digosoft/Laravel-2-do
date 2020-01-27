@@ -41,7 +41,17 @@ Route::post('todos/{tid}/update', [
 	'as'	=>'update-todos'
 ]);
 
-Route::get('{edit}/edit', [
+Route::get('{todo}/edit', [
 	'uses'	=> 'TodosController@edit',
 	'as'	=>	'edit-todos'
+]);
+
+Route::get('todos/{delete}/delete', [
+	'uses'	=> 'TodosController@destory',
+	'as'	=>	'delete-todos'
+]);
+
+Route::get('todos/{todos}/complete', [
+	'uses'	=> 'TodosController@complete',
+	'as'	=>	'todos-complete'
 ]);

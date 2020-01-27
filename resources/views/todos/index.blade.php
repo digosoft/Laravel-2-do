@@ -12,7 +12,13 @@
 					      		<ul class="list-group">
 									@foreach($todos as $todo)
 										<li class="list-group-item">{{$todo->name }}
-											<a href="{{ route('single-todos', $todo->id)}}" class="btn btn-primary btn-sm float-right"> view</a>
+											@if($todo->completed == false)
+											<a href="{{ route('todos-complete', $todo->id)}}" class="btn btn-warning btn-sm float-right"> Complete</a>
+											@endif
+
+											<a href="{{ route('single-todos', $todo->id)}}" class="btn btn-primary btn-sm float-right  mr-2"> view</a>
+
+
 										</li> 
 									@endforeach
 								</ul>
